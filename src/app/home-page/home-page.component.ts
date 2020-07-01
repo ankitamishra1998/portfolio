@@ -16,10 +16,9 @@ export class HomePageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
      let chart = am4core.create('chartdiv', am4plugins_forceDirected.ForceDirectedTree);
      let series = chart.series.push(new am4plugins_forceDirected.ForceDirectedSeries());
-     series.data = data;
+     series.data = (data  as  any).default;
      series.dataFields.value = 'value';
      series.dataFields.name = 'name';
      series.dataFields.children = 'children';
